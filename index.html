@@ -1,0 +1,100 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Pre-Course Final Project</title>
+	<link rel="stylesheet" href="styles\styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded" rel="stylesheet">
+</head>
+<body>
+	<div id="container_menu">
+		<div id="play_menu">
+			<p id="menu_title">SKYLAB<span style="color:orange">Pasapalabra</span></p>
+			<p id="menu_subtitle">Call of Duty Edition</p>
+			<button id="new_game" class="btn_menu" onclick="newUserIntro()">Nueva partida</button><br>
+			<button id="instructions" class="btn_menu" onclick="showInstructions()">Instrucciones</button><br>
+			<button id="best_players" class="btn_menu" onclick="showBestPlayers()">Clasificación</button><br>		
+			<div id="name_intro">
+				<input id="user_name" type="text" placeholder="Introduce tu nombre">
+				<button id="ok_menu" class="ok_btn_menu" onclick="newUser()">OK</button>
+				<p id="alert_user">Lo siento, ese nombre ya está siendo utilizado por otro usuario</p>
+				
+			</div>
+		</div>
+	</div>
+	<div id="container_best_players">
+		<div id="best_players">
+			<p id="menu_title">SKYLAB<span style="color:orange">Pasapalabra</span></p>
+			<p id="menu_subtitle">Call of Duty Edition</p>
+			<p id="best_players_list">Clasifición general<p>
+			<ol id="players_list">
+				<li id="first"><span style="color:orange">AGONISTICKATAI</span> con un total de: 27 puntos</li>
+				<li id="second"><span style="color:orange">MAJOR TRAPERO</span> con un total de: 25 puntos</li>
+				<li id="third"><span style="color:orange">DONALD TRUMP</span> con un total de: 10 puntos</li>
+				<li id="fourth"><span style="color:orange">JHON RAMBO</span> con un total de 5 puntos</li>
+				<li id="fifth"><span style="color:orange">CHUCK NORRIS</span> con un total de 0 puntos</li>
+			</ol>
+			<button id="stop" class="btn_return" onclick="returnToMenu()">Volver al menú principal</button>	
+		</div>
+	</div>
+	<div id="container_instructions">
+		<div id=instructions>
+			<p id="menu_title">SKYLAB<span style="color:orange">Pasapalabra</span></p>
+			<p id="menu_subtitle">Call of Duty Edition</p>
+			<p>Voy a hacer una pregunta por cada letra del alfabeto, al final del juego, habiendo respondido todas las letras, te diré cuantas has acertado y cuantas has fallado.</p>
+			<p>Si en una de las preguntas tienes dudas y quieres pasar a la siguiente, pulsa '<span style="color:orange">PASAPALABRA</span>' y pasaré a la siguiente pregunta, más tarde podrás volver a ella y responderla.</p>
+			<p>Puedes terminar el juego en cualquier momento pulsando '<span style="color:orange">SALIR DEL JUEGO</span>'. En este caso, te mostraré el total de aciertos y errores pero no entrarás en la clasificación general de usuarios.</p>	
+			<p>Al final del juego podrás ver en qué puesto has quedado en la clasificación respecto a otros usuarios.</p>
+			<p>Por último, dispones de <span style="color:orange">180 segundos</span> para completar todas las preguntas</p>
+			<button id="stop" class="btn_return" onclick="returnToMenu()">Volver al menú principal</button>
+		</div>
+	</div>
+	<div id="container_game">
+		<header>
+			<p id="titlename">SKYLAB<span style="color:orange">Pasapalabra</span></p>
+			<p id="subtitle">Call of Duty Edition</p>
+		</header>
+		<div id="globalLetters">
+			<span class="letters">A<span class="results"></span></span>
+			<span class="letters">B<span class="results"></span></span>
+			<span class="letters">C<span class="results"></span></span>
+			<span class="letters">D<span class="results"></span></span>
+			<span class="letters">E<span class="results"></span></span>
+			<span class="letters">F<span class="results"></span></span>
+			<span class="letters">G<span class="results"></span></span>
+			<span class="letters">H<span class="results"></span></span>
+			<span class="letters">I<span class="results"></span></span>
+			<span class="letters">J<span class="results"></span></span>
+			<span class="letters">K<span class="results"></span></span>
+			<span class="letters">L<span class="results"></span></span>
+			<span class="letters">M<span class="results"></span></span>
+			<span class="letters">N<span class="results"></span></span>
+			<span class="letters">Ñ<span class="results"></span></span>
+			<span class="letters">O<span class="results"></span></span>
+			<span class="letters">P<span class="results"></span></span>
+			<span class="letters">Q<span class="results"></span></span>
+			<span class="letters">R<span class="results"></span></span>
+			<span class="letters">S<span class="results"></span></span>
+			<span class="letters">T<span class="results"></span></span>
+			<span class="letters">U<span class="results"></span></span>
+			<span class="letters">V<span class="results"></span></span>
+			<span class="letters">W<span class="results"></span></span>
+			<span class="letters">X<span class="results"></span></span>
+			<span class="letters">Y<span class="results"></span></span>
+			<span class="letters">Z<span class="results"></span></span>
+		</div>
+		<p id="game_questions">Skylab Coders Academy</p>
+		<div id="user_btn">
+			<button id="timer" class="results_panel">Tiempo</button>
+			<button id="correct" class="results_panel">Aciertos</button>
+			<button id="incorrect" class="results_panel">Errores</button>
+			<input id="answer" type="text" placeholder="Dispara aquí tu respuesta!!">
+			<button id="ok" class="btn_game" onclick="answerAnalyzer()">OK</button>
+			<button id="pasapalabra" class="btn_game" onclick="userPasapalabra()">PASAPALABRA</button>
+			<button id="stop" class="btn_game" onclick="endGame()">Salir del juego</button>
+		</div> 
+		<footer id="creator">Nacho Torrella<span style="color:orange">FINAL PROJECT</span></footer>
+	</div>
+	<script src="app/app.js"></script>
+</body>
+</html>
